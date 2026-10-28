@@ -136,6 +136,44 @@ body.in-app .app-download { opacity: 1; visibility: visible; transform: translat
   transform: translate(-50%, calc(-50% - var(--hero-offset))) scale(var(--hero-scale));
   transition: opacity .2s linear;
 }
+.hero-ambient-dust {
+  position: absolute; z-index: 0; top: 50%; left: 50%; width: min(770px, 94vw); height: clamp(190px, 32vh, 248px);
+  pointer-events: none; opacity: .72; transform: translate(-50%,-50%);
+  transition: opacity .55s ease, filter .65s ease, transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.dust-layer { position: absolute; inset: 0; display: block; will-change: transform, opacity; }
+.dust-layer-a {
+  background-image:
+    radial-gradient(circle at 4% 49%, rgba(241,241,239,.82) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 14% 18%, rgba(241,241,239,.72) 0 .9px, transparent 1.7px),
+    radial-gradient(circle at 25% 5%, rgba(241,241,239,.58) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 38% 15%, rgba(241,241,239,.74) 0 .9px, transparent 1.7px),
+    radial-gradient(circle at 57% 4%, rgba(241,241,239,.7) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 73% 12%, rgba(241,241,239,.62) 0 .9px, transparent 1.7px),
+    radial-gradient(circle at 91% 34%, rgba(241,241,239,.78) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 98% 58%, rgba(241,241,239,.7) 0 .8px, transparent 1.7px),
+    radial-gradient(circle at 84% 79%, rgba(241,241,239,.65) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 69% 95%, rgba(241,241,239,.75) 0 .9px, transparent 1.7px),
+    radial-gradient(circle at 48% 99%, rgba(241,241,239,.62) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 29% 90%, rgba(241,241,239,.7) 0 .9px, transparent 1.7px),
+    radial-gradient(circle at 11% 76%, rgba(241,241,239,.78) 0 1px, transparent 1.8px);
+  animation: dust-drift-a 10s ease-in-out infinite alternate;
+}
+.dust-layer-b {
+  background-image:
+    radial-gradient(circle at 8% 31%, rgba(241,241,239,.52) 0 .8px, transparent 1.5px),
+    radial-gradient(circle at 19% 68%, rgba(241,241,239,.68) 0 .9px, transparent 1.6px),
+    radial-gradient(circle at 32% 2%, rgba(241,241,239,.58) 0 .8px, transparent 1.5px),
+    radial-gradient(circle at 44% 93%, rgba(241,241,239,.6) 0 .9px, transparent 1.6px),
+    radial-gradient(circle at 61% 11%, rgba(241,241,239,.7) 0 .8px, transparent 1.5px),
+    radial-gradient(circle at 78% 87%, rgba(241,241,239,.55) 0 .9px, transparent 1.6px),
+    radial-gradient(circle at 88% 21%, rgba(241,241,239,.72) 0 .8px, transparent 1.5px),
+    radial-gradient(circle at 96% 67%, rgba(241,241,239,.57) 0 .9px, transparent 1.6px);
+  animation: dust-drift-b 14s ease-in-out -4s infinite alternate;
+}
+@keyframes dust-drift-a { from { transform: translate3d(-5px,3px,0); opacity: .44; } to { transform: translate3d(6px,-5px,0); opacity: .94; } }
+@keyframes dust-drift-b { from { transform: translate3d(5px,-4px,0); opacity: .35; } to { transform: translate3d(-6px,5px,0); opacity: .82; } }
+.hero.title-hovered .hero-ambient-dust { opacity: .16; filter: blur(.7px); transform: translate(-50%,-50%) scale(1.07); }
 .hero-card {
   position: absolute; width: clamp(120px, 14vw, 220px); aspect-ratio: .78; overflow: hidden;
   filter: var(--card-filter, brightness(.53) saturate(.58) contrast(1.08)); opacity: var(--card-opacity, .64);
@@ -452,4 +490,5 @@ html[data-theme="light"] .brand-word { color: rgba(23,24,25,.72); }
     animation-iteration-count: 1 !important; transition-duration: .01ms !important;
   }
   .reveal { opacity: 1; transform: none; }
+  .dust-layer { animation: none; }
 }

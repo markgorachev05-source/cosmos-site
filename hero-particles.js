@@ -306,6 +306,7 @@
   if (finePointer) {
     title.addEventListener("pointerenter", (event) => {
       if (event.pointerType === "touch") return;
+      hero.classList.add("title-hovered");
       hoverTarget = 1;
       setPointer(event);
       requestFrame();
@@ -316,6 +317,7 @@
       requestFrame();
     }, { passive: true });
     title.addEventListener("pointerleave", () => {
+      hero.classList.remove("title-hovered");
       hoverTarget = 0;
       pointerStrengthTarget = 0;
       requestFrame();
