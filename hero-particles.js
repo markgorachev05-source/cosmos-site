@@ -26,7 +26,7 @@
 
     void main() {
       float formation = smoothstep(0.0, 0.34, uHover);
-      float burst = smoothstep(0.32, 0.96, uHover);
+      float burst = smoothstep(0.54, 0.99, uHover);
       float interactive = smoothstep(0.04, 0.22, uHover);
       vec2 center = uResolution * 0.5;
       vec2 point = mix(aIdlePosition.xy, aTarget, formation) + aBreakOffset.xy * burst;
@@ -47,7 +47,7 @@
       clipPosition.y *= -1.0;
       gl_Position = vec4(clipPosition, 0.0, 1.0);
       gl_PointSize = max(1.0, aSize * uDpr * perspective * (0.76 + interactive * 0.34));
-      float ambientParticle = step(0.88, aSeed) * 0.58;
+      float ambientParticle = step(0.78, aSeed) * 0.72;
       float visible = mix(ambientParticle, 1.0, smoothstep(0.03, 0.22, uHover));
       vAlpha = aAlpha * visible * (0.84 + 0.16 * sin(uTime * 0.0016 + aSeed * 37.0));
       vWarm = aWarm;
@@ -156,8 +156,8 @@
     if (box.width < 20 || box.height < 20) return false;
 
     pixelRatio = Math.min(window.devicePixelRatio || 1, window.innerWidth < 760 ? 1.12 : 1.38);
-    bleedX = Math.min(76, Math.max(36, box.width * 0.13));
-    bleedY = Math.min(56, Math.max(28, box.height * 0.38));
+    bleedX = Math.min(280, Math.max(88, box.width * 0.5));
+    bleedY = Math.min(240, Math.max(58, box.height * 1.8));
     canvasWidth = box.width + bleedX * 2;
     canvasHeight = box.height + bleedY * 2;
     canvas.style.left = `${-bleedX}px`;
@@ -287,8 +287,8 @@
     gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
     gl.drawArrays(gl.POINTS, 0, particleCount);
 
-    const wordFade = smoothstep(0.38, 0.78, hover);
-    title.style.setProperty("--particle-word-opacity", (1 - wordFade * 0.95).toFixed(3));
+    const wordFade = smoothstep(0.48, 0.78, hover);
+    title.style.setProperty("--particle-word-opacity", (1 - wordFade).toFixed(3));
     if (heroIsVisible) frameId = window.requestAnimationFrame(renderFrame);
   }
 
