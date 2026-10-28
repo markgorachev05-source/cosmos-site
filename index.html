@@ -10,10 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=cosmos-space-portfolio-1">
+    <link rel="stylesheet" href="styles.css?v=cosmos-manifesto-viewer-1">
     <script src="app.js?v=motion-6b04529" defer></script>
     <script src="hero-particles.js?v=cosmos-hover-particles-5" defer></script>
     <script src="portfolio-field.js?v=cosmos-space-portfolio-1" defer></script>
+    <script src="manifesto-viewer.js?v=cosmos-manifesto-viewer-1" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -143,12 +144,54 @@
           </div>
         </div>
         <div class="manifesto-strip" aria-label="A few things worth keeping">
-          <figure class="strip-item reveal"><div class="strip-image sprite sprite-3"></div><figcaption>Made by hand</figcaption></figure>
-          <figure class="strip-item reveal"><div class="strip-image sprite sprite-2"></div><figcaption>Found in the wild</figcaption></figure>
-          <figure class="strip-item reveal"><div class="strip-image sprite sprite-4"></div><figcaption>Kept for later</figcaption></figure>
-          <figure class="strip-item reveal"><div class="strip-image sprite sprite-5"></div><figcaption>Passed along</figcaption></figure>
+          <figure class="strip-item reveal">
+            <button class="strip-image sprite sprite-3" type="button" data-manifesto-open data-sprite="3" data-viewer-title="Made by hand" data-viewer-description="A studio shaped by the hands that return to it: paint-worn surfaces, collected references, and the quiet rituals that make room for new ideas." aria-haspopup="dialog" aria-controls="manifesto-viewer" aria-expanded="false" aria-label="Explore Made by hand">
+              <span class="strip-image-hint" aria-hidden="true">Explore <span>↗</span></span>
+            </button>
+            <figcaption>Made by hand</figcaption>
+          </figure>
+          <figure class="strip-item reveal">
+            <button class="strip-image sprite sprite-2" type="button" data-manifesto-open data-sprite="2" data-viewer-title="Found in the wild" data-viewer-description="A sculptural silhouette caught between movement and stillness. Fabric, gesture, and a hint of the unexpected turn a passing moment into an idea worth keeping." aria-haspopup="dialog" aria-controls="manifesto-viewer" aria-expanded="false" aria-label="Explore Found in the wild">
+              <span class="strip-image-hint" aria-hidden="true">Explore <span>↗</span></span>
+            </button>
+            <figcaption>Found in the wild</figcaption>
+          </figure>
+          <figure class="strip-item reveal">
+            <button class="strip-image sprite sprite-4" type="button" data-manifesto-open data-sprite="4" data-viewer-title="Kept for later" data-viewer-description="Translucent paper catches the warmth of the light and turns a simple fold into a landscape of layered shadow, fragile edges, and quiet colour." aria-haspopup="dialog" aria-controls="manifesto-viewer" aria-expanded="false" aria-label="Explore Kept for later">
+              <span class="strip-image-hint" aria-hidden="true">Explore <span>↗</span></span>
+            </button>
+            <figcaption>Kept for later</figcaption>
+          </figure>
+          <figure class="strip-item reveal">
+            <button class="strip-image sprite sprite-5" type="button" data-manifesto-open data-sprite="5" data-viewer-title="Passed along" data-viewer-description="One figure crossing a vast gallery gives scale to a quiet thought: looking is a way of carrying an idea forward, then giving it room to travel." aria-haspopup="dialog" aria-controls="manifesto-viewer" aria-expanded="false" aria-label="Explore Passed along">
+              <span class="strip-image-hint" aria-hidden="true">Explore <span>↗</span></span>
+            </button>
+            <figcaption>Passed along</figcaption>
+          </figure>
         </div>
       </section>
+
+      <div class="manifesto-viewer" data-manifesto-viewer id="manifesto-viewer" aria-hidden="true" hidden>
+        <div class="viewer-backdrop" data-viewer-close aria-hidden="true"></div>
+        <canvas class="viewer-particles" data-viewer-particles aria-hidden="true"></canvas>
+        <section class="viewer-shell" role="dialog" aria-modal="true" aria-labelledby="viewer-title" aria-describedby="viewer-description">
+          <button class="viewer-back" type="button" data-viewer-close>
+            <span aria-hidden="true">←</span> Back to collection <kbd>Esc</kbd>
+          </button>
+          <div class="viewer-layout">
+            <div class="viewer-media">
+              <div class="viewer-photo sprite sprite-3" data-viewer-photo role="img" aria-label=""></div>
+              <span class="viewer-count" data-viewer-count></span>
+            </div>
+            <div class="viewer-copy">
+              <span class="eyebrow">A small thing worth keeping</span>
+              <h2 id="viewer-title"></h2>
+              <p id="viewer-description"></p>
+              <span class="viewer-signature" aria-hidden="true"><i>✣</i> COSMOS / FIELD NOTES</span>
+            </div>
+          </div>
+        </section>
+      </div>
 
       <section class="app-section" id="app" aria-labelledby="app-title">
         <div class="app-topline reveal">
