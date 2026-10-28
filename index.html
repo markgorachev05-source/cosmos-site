@@ -10,9 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=cosmos-hover-particles-5">
+    <link rel="stylesheet" href="styles.css?v=cosmos-space-portfolio-1">
     <script src="app.js?v=motion-6b04529" defer></script>
     <script src="hero-particles.js?v=cosmos-hover-particles-5" defer></script>
+    <script src="portfolio-field.js?v=cosmos-space-portfolio-1" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -64,53 +65,68 @@
       </section>
 
       <section class="gallery-section" id="explore" aria-label="A collection of inspiration">
-        <div class="gallery-intro reveal">
-          <span class="eyebrow">A living moodboard</span>
+        <div class="gallery-intro">
+          <span class="eyebrow">A living moodboard<br>Archive / 01—10</span>
           <p>Find the things<br>you didn’t know<br>you were looking for.</p>
+          <div class="field-instruction"><span class="field-instruction-star" aria-hidden="true">✦</span><span>Move through the field<br>to reveal the images</span></div>
         </div>
-        <div class="gallery-grid" aria-label="Selected visual inspiration">
-          <article class="art-card card-one reveal">
-            <div class="artwork sprite sprite-0" role="img" aria-label="A veiled figure in a quiet monochrome portrait"></div>
+        <div class="portfolio-field" data-portfolio-field aria-label="Move your cursor through this field to reveal ten photographs">
+          <div class="field-nebula" aria-hidden="true"></div>
+          <div class="field-cursor-glow" aria-hidden="true"></div>
+          <canvas class="field-particles" aria-hidden="true"></canvas>
+
+          <article class="field-photo" data-field-photo tabindex="0" aria-label="Form study: a veiled figure" style="--photo-x:9%;--photo-y:30%;--photo-width:clamp(128px,14vw,188px);--photo-rotation:-12deg;--photo-depth:.72;--float-duration:16s;--float-delay:-3s">
+            <div class="field-photo-image sprite sprite-0" role="img" aria-label="A veiled figure in a quiet monochrome portrait"></div>
             <button class="save-button" type="button" aria-label="Save veiled figure" aria-pressed="false"><span>＋</span></button>
-            <div class="art-caption"><span>FORM STUDY</span><span>01 / 08</span></div>
+            <div class="art-caption"><span>FORM STUDY</span><span>01 / 10</span></div>
           </article>
-          <article class="art-card card-two reveal">
-            <div class="artwork sprite sprite-1" role="img" aria-label="Satin folds in soft monochrome light"></div>
+          <article class="field-photo" data-field-photo tabindex="0" aria-label="Soft matter: satin in evening light" style="--photo-x:28%;--photo-y:19%;--photo-width:clamp(142px,16vw,212px);--photo-rotation:7deg;--photo-depth:.48;--float-duration:19s;--float-delay:-8s">
+            <div class="field-photo-image sprite sprite-1" role="img" aria-label="Satin folds in soft monochrome light"></div>
             <button class="save-button" type="button" aria-label="Save satin study" aria-pressed="false"><span>＋</span></button>
-            <div class="art-caption"><span>SOFT MATTER</span><span>02 / 08</span></div>
+            <div class="art-caption"><span>SOFT MATTER</span><span>02 / 10</span></div>
           </article>
-          <article class="art-card card-three reveal">
-            <div class="artwork sprite sprite-2" role="img" aria-label="A sculptural couture dress"></div>
+          <article class="field-photo" data-field-photo tabindex="0" aria-label="New romance: a sculptural dress" style="--photo-x:49%;--photo-y:29%;--photo-width:clamp(126px,13vw,176px);--photo-rotation:-5deg;--photo-depth:.66;--float-duration:14s;--float-delay:-6s">
+            <div class="field-photo-image sprite sprite-2" role="img" aria-label="A sculptural couture dress"></div>
             <button class="save-button" type="button" aria-label="Save sculptural dress" aria-pressed="false"><span>＋</span></button>
-            <div class="art-caption"><span>NEW ROMANCE</span><span>03 / 08</span></div>
+            <div class="art-caption"><span>NEW ROMANCE</span><span>03 / 10</span></div>
           </article>
-          <article class="art-card card-four reveal">
-            <div class="artwork sprite sprite-3" role="img" aria-label="An artist's sunlit studio"></div>
+          <article class="field-photo" data-field-photo tabindex="0" aria-label="In the studio: a sunlit atelier" style="--photo-x:70%;--photo-y:19%;--photo-width:clamp(136px,15vw,196px);--photo-rotation:10deg;--photo-depth:.42;--float-duration:17s;--float-delay:-11s">
+            <div class="field-photo-image sprite sprite-3" role="img" aria-label="An artist's sunlit studio"></div>
             <button class="save-button" type="button" aria-label="Save artist studio" aria-pressed="false"><span>＋</span></button>
-            <div class="art-caption"><span>IN THE STUDIO</span><span>04 / 08</span></div>
+            <div class="art-caption"><span>IN THE STUDIO</span><span>04 / 10</span></div>
           </article>
-          <article class="art-card card-five reveal">
-            <div class="artwork sprite sprite-4" role="img" aria-label="Warm translucent rust-red paper"></div>
+          <article class="field-photo" data-field-photo tabindex="0" aria-label="Colour study: translucent rust-red paper" style="--photo-x:90%;--photo-y:35%;--photo-width:clamp(124px,13vw,172px);--photo-rotation:-8deg;--photo-depth:.8;--float-duration:18s;--float-delay:-2s">
+            <div class="field-photo-image sprite sprite-4" role="img" aria-label="Warm translucent rust-red paper"></div>
             <button class="save-button" type="button" aria-label="Save paper study" aria-pressed="false"><span>＋</span></button>
-            <div class="art-caption"><span>COLOUR / 09</span><span>05 / 08</span></div>
+            <div class="art-caption"><span>COLOUR / 09</span><span>05 / 10</span></div>
           </article>
-          <article class="art-card card-six reveal">
-            <div class="artwork sprite sprite-5" role="img" aria-label="A solitary figure in an architectural gallery"></div>
+          <article class="field-photo" data-field-photo tabindex="0" aria-label="Room to think: a solitary gallery visitor" style="--photo-x:16%;--photo-y:72%;--photo-width:clamp(136px,15vw,198px);--photo-rotation:6deg;--photo-depth:.56;--float-duration:21s;--float-delay:-12s">
+            <div class="field-photo-image sprite sprite-5" role="img" aria-label="A solitary figure in an architectural gallery"></div>
             <button class="save-button" type="button" aria-label="Save gallery study" aria-pressed="false"><span>＋</span></button>
-            <div class="art-caption"><span>ROOM TO THINK</span><span>06 / 08</span></div>
+            <div class="art-caption"><span>ROOM TO THINK</span><span>06 / 10</span></div>
           </article>
-          <article class="art-card card-seven reveal">
-            <div class="artwork sprite sprite-2" role="img" aria-label="An editorial study of sculptural clothing"></div>
-            <button class="save-button" type="button" aria-label="Save editorial study" aria-pressed="false"><span>＋</span></button>
-            <div class="art-caption"><span>OBJECT / BODY</span><span>07 / 08</span></div>
+          <article class="field-photo" data-field-photo tabindex="0" aria-label="Orbit: a suspended smoky-glass sphere" style="--photo-x:37%;--photo-y:77%;--photo-width:clamp(126px,14vw,184px);--photo-rotation:-9deg;--photo-depth:.74;--float-duration:15s;--float-delay:-5s">
+            <img class="field-photo-image" src="assets/portfolio-orbit.png" alt="A translucent smoky-glass sphere over a black stone plinth" loading="lazy" decoding="async">
+            <button class="save-button" type="button" aria-label="Save glass sphere" aria-pressed="false"><span>＋</span></button>
+            <div class="art-caption"><span>ORBIT</span><span>07 / 10</span></div>
           </article>
-          <article class="art-card card-eight reveal">
-            <div class="artwork sprite sprite-0" role="img" aria-label="A soft-focus portrait in drifting fabric"></div>
-            <button class="save-button" type="button" aria-label="Save portrait study" aria-pressed="false"><span>＋</span></button>
-            <div class="art-caption"><span>IN MOTION</span><span>08 / 08</span></div>
+          <article class="field-photo" data-field-photo tabindex="0" aria-label="Magnolia: a flower in a charcoal studio" style="--photo-x:59%;--photo-y:69%;--photo-width:clamp(138px,15vw,196px);--photo-rotation:5deg;--photo-depth:.5;--float-duration:20s;--float-delay:-9s">
+            <img class="field-photo-image" src="assets/portfolio-magnolia.png" alt="An ivory magnolia lit against a dark studio" loading="lazy" decoding="async">
+            <button class="save-button" type="button" aria-label="Save magnolia study" aria-pressed="false"><span>＋</span></button>
+            <div class="art-caption"><span>BOTANICAL</span><span>08 / 10</span></div>
+          </article>
+          <article class="field-photo" data-field-photo tabindex="0" aria-label="Blue hour: mineral forms in water" style="--photo-x:80%;--photo-y:78%;--photo-width:clamp(128px,14vw,186px);--photo-rotation:-7deg;--photo-depth:.62;--float-duration:18s;--float-delay:-14s">
+            <img class="field-photo-image" src="assets/portfolio-minerals.png" alt="Translucent blue mineral forms reflected in dark water" loading="lazy" decoding="async">
+            <button class="save-button" type="button" aria-label="Save mineral study" aria-pressed="false"><span>＋</span></button>
+            <div class="art-caption"><span>BLUE HOUR</span><span>09 / 10</span></div>
+          </article>
+          <article class="field-photo" data-field-photo tabindex="0" aria-label="Fold: a ribbon of burnished copper" style="--photo-x:94%;--photo-y:67%;--photo-width:clamp(116px,12vw,158px);--photo-rotation:11deg;--photo-depth:.86;--float-duration:17s;--float-delay:-7s">
+            <img class="field-photo-image" src="assets/portfolio-copper.png" alt="A folded copper ribbon sculpture in warm light" loading="lazy" decoding="async">
+            <button class="save-button" type="button" aria-label="Save copper sculpture" aria-pressed="false"><span>＋</span></button>
+            <div class="art-caption"><span>FOLD</span><span>10 / 10</span></div>
           </article>
         </div>
-        <div class="gallery-end reveal"><span>Keep looking</span><span class="tiny-spark" aria-hidden="true">✣</span><span>There’s always more</span></div>
+        <div class="gallery-end"><span>Move / discover / collect</span><span class="tiny-spark" aria-hidden="true">✣</span><span>There’s always more</span></div>
       </section>
 
       <section class="manifesto-section" id="manifesto" aria-labelledby="manifesto-title">
