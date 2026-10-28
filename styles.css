@@ -166,7 +166,12 @@ body.in-app .app-download { opacity: 1; visibility: visible; transform: translat
 .eyebrow { display: block; color: var(--muted); font-size: 9px; font-weight: 400; letter-spacing: .11em; text-transform: uppercase; }
 .hero-eyebrow { margin-bottom: 13px; opacity: .58; font-size: 8px; animation: eyebrow-in .9s .16s both; }
 @keyframes eyebrow-in { from { opacity: 0; letter-spacing: .24em; transform: translateY(8px); } to { opacity: .58; letter-spacing: .11em; transform: translateY(0); } }
-.hero h1 { margin: 0; font-size: clamp(3.6rem, 11.7vw, 9.2rem); font-weight: 300; letter-spacing: -.095em; line-height: .88; animation: wordmark-focus 1.55s .08s cubic-bezier(.2,.72,.25,1) both; }
+.hero h1 { position: relative; margin: 0; font-size: clamp(3.6rem, 11.7vw, 9.2rem); font-weight: 300; letter-spacing: -.095em; line-height: .88; animation: wordmark-focus 1.55s .08s cubic-bezier(.2,.72,.25,1) both; }
+.hero-wordmark { position: relative; z-index: 3; display: inline-block; }
+.hero h1.particle-ready { color: var(--paper); -webkit-text-fill-color: var(--paper); animation: none; filter: none; transform: none; }
+.hero h1.particle-ready .hero-wordmark { color: var(--paper); -webkit-text-fill-color: var(--paper); opacity: var(--particle-word-opacity, .9); text-shadow: 0 0 34px rgba(241,241,239,.045); }
+.hero h1.particle-ready sup { position: relative; z-index: 3; color: var(--paper); -webkit-text-fill-color: var(--paper); }
+.hero-particle-canvas { position: absolute; z-index: 2; inset: 0; display: block; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 @keyframes wordmark-focus { from { opacity: 0; filter: blur(11px); letter-spacing: -.15em; transform: translateY(12px) scale(.97); } to { opacity: 1; filter: blur(0); letter-spacing: -.095em; transform: translateY(0) scale(1); } }
 .hero h1 sup { margin-left: .08em; font-size: .17em; letter-spacing: 0; vertical-align: 2.3em; }
 .hero-tagline { display: flex; justify-content: center; align-items: center; gap: 9px; margin: 14px 0 0; color: var(--muted); font-size: 11px; animation: tagline-in .9s .55s both; }
